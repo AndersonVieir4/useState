@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, ScrollView } from 'react-nat
 
 export default function CadastroScreen() {
   const [nome, setNome] = useState('');
+  const [sobrenome, setSobrenome] = useState('');
   const [genero, setGenero] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
   const [usuario, setUsuario] = useState('');
@@ -16,6 +17,7 @@ export default function CadastroScreen() {
   const handleCadastro = () => {
     const dados = {
       Nome: nome,
+      Sobrenome: sobrenome,
       Gênero: genero,
       'Data de Nascimento': dataNascimento,
       Usuário: usuario,
@@ -36,6 +38,12 @@ export default function CadastroScreen() {
         placeholder="Nome"
         value={nome}
         onChangeText={setNome}
+        style={styles.input}
+      />
+      <TextInput
+        placeholder="Sobrenome"
+        value={sobrenome}
+        onChangeText={setSobrenome}
         style={styles.input}
       />
       <TextInput
